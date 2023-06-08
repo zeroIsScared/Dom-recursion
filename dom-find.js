@@ -9,24 +9,15 @@ const find = (element, what) => {
     if( what == content) {
         return element;
     }
-//HW3. refactor the code using Array.forEach()
+    
+    let found = null;
 
-    // for(let index= 0; index < element.children.length; index++){
-    //   let found = find(element.children[index],what);
-    //   if(found!=undefined){
-    //     return found;
-    //  }
-    // }
-
-    Array.from(element.children).forEach(function (item) {
-
-      let found = find(item,what);
-      if (found !== undefined){
-        return found;
-      }
-
-    }      
-    )
+    Array.from(element.children).forEach(element => {
+        found = find(element, what) ?? found;
+});
+return found;
+    
 }
 
-find(root, '1.2');
+let found = find(root, '1.2.1');
+console.log(`Found it in element:`, found);
