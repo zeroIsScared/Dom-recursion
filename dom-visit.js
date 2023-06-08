@@ -3,9 +3,9 @@
 const visit = (element) => {
     //HW1. explain 'element.childNodes[0].textContent.trim()'
 
-    //Here was used 'element.childNodes[0].textContent.trim()' because it was needed to capture the text content that is not an element 
-    //of given element in case element has no child elements, and trim() was used to get rid of unnecessary space that is retuned alongside text
-    // when using textContent.
+    //Here was used 'element.childNodes[0].textContent.trim()' because it was needed to capture the text content of the element before looking for its children elements 
+    // and trim() was used to get rid of unnecessary space that is retuned alongside text when using textContent.
+   
 
     console.log(
         `visiting ${element.childNodes[0].textContent.trim()}`
